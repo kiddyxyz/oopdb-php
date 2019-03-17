@@ -13,12 +13,14 @@ if(isset($_POST['submit'])) {
     $alamat = $_POST['alamat'];
     $nohp = $_POST['nohp'];
     $nim = $_POST['nim'];
+    $hobby = $_POST['hobby'];
 
     $mhs = new Mahasiswa();
     $mhs->setAlamat($alamat);
     $mhs->setNama($name);
     $mhs->setTelp($nohp);
     $mhs->setNim($nim);
+    $mhs->setHobby($hobby);
 
     $mhs->getInsert();
 
@@ -49,6 +51,10 @@ if(isset($_POST['submit'])) {
         <tr>
             <td>NO HP</td>
             <td><input type="text" name="nohp" placeholder="nohp"></td>
+        </tr>
+        <tr>
+            <td>HOBBy</td>
+            <td><input type="text" name="hobby" placeholder="hobby"></td>
         </tr>
         <tr>
             <td><input type="submit" name="submit" value="Add"></td>

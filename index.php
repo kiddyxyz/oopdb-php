@@ -25,6 +25,7 @@ include("Mahasiswa.php");
         <td>NAMA</td>
         <td>ALAMAT</td>
         <td>NO HP</td>
+        <td>HOBBY</td>
     </tr>
     </thead>
     <tbody>
@@ -39,6 +40,7 @@ include("Mahasiswa.php");
             <td><?php echo $row['nama'] ?></td>
             <td><?php echo $row['alamat'] ?></td>
             <td><?php echo $row['no_telfon'] ?></td>
+            <td><?php echo $row['hobby'] ?></td>
             <td> <a href='edit.php?id=<?php echo $row['id'] ?>'>Edit</a></td>
             <td> <a href='delete.php?id=<?php echo $row['id'] ?>'>Delete</a></td>
         </tr>

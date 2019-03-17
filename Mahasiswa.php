@@ -10,7 +10,7 @@ include ('Database.php');
 
 class Mahasiswa
 {
-    private $nim, $nama, $alamat, $telp, $id;
+    private $nim, $nama, $alamat, $telp, $id, $hobby;
     private $insert, $select;
 
 
@@ -28,6 +28,22 @@ class Mahasiswa
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * @param mixed $hobby
+     */
+    public function setHobby($hobby)
+    {
+        $this->hobby = $hobby;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHobby()
+    {
+        return $this->hobby;
     }
 
 
@@ -106,8 +122,9 @@ class Mahasiswa
         $nama = $this->getNama();
         $telp = $this->getTelp();
         $alamat = $this->getAlamat();
+        $hobby = $this->getHobby();
 
-        $sql = "insert into mahasiswa (nim, nama, alamat, no_telfon) values ('$nim', '$nama', '$alamat', '$telp')";
+        $sql = "insert into mahasiswa (nim, nama, alamat, no_telfon, hobby) values ('$nim', '$nama', '$alamat', '$telp', '$hobby')";
 
         $db = new Database();
         $db->openKoneksi();
@@ -130,8 +147,9 @@ class Mahasiswa
         $nama = $this->getNama();
         $telp = $this->getTelp();
         $alamat = $this->getAlamat();
+        $hobby = $this->getHobby();
 
-        $sql = "update mahasiswa set nim = '$nim', nama = '$nama', alamat = '$alamat', no_telfon = '$telp' where id = '$id';";
+        $sql = "update mahasiswa set nim = '$nim', nama = '$nama', alamat = '$alamat', no_telfon = '$telp', hobby = '$hobby' where id = '$id';";
 
         $db = new Database();
         $db->openKoneksi();

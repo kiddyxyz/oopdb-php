@@ -19,6 +19,7 @@ while($user_data = mysqli_fetch_array($q))
     $mhs->setNim($user_data['nim']);
     $mhs->setAlamat($user_data['alamat']);
     $mhs->setTelp($user_data['no_telfon']);
+    $mhs->setHobby($user_data['hobby']);
 }
 
 
@@ -28,12 +29,14 @@ if(isset($_POST['submit'])) {
     $nohp = $_POST['nohp'];
     $nim = $_POST['nim'];
     $id = $_GET['id'];
+    $hobby = $_POST['hobby'];
 
     $mhs->setId($id);
     $mhs->setAlamat($alamat);
     $mhs->setNama($name);
     $mhs->setTelp($nohp);
     $mhs->setNim($nim);
+    $mhs->setHobby($hobby);
 
     $mhs->update();
 
@@ -64,6 +67,10 @@ if(isset($_POST['submit'])) {
         <tr>
             <td>NO HP</td>
             <td><input type="text" name="nohp" placeholder="nohp" value="<?php echo $mhs->getTelp() ?>"></td>
+        </tr>
+        <tr>
+            <td>HOBYY</td>
+            <td><input type="text" name="hobby" placeholder="hobby" value="<?php echo $mhs->getHobby() ?>"></td>
         </tr>
         <tr>
             <td><input type="submit" name="submit" value="Update"></td>
