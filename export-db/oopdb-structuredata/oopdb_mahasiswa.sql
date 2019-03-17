@@ -28,9 +28,20 @@ CREATE TABLE `mahasiswa` (
   `nama` varchar(230) NOT NULL,
   `alamat` text,
   `no_telfon` varchar(14) DEFAULT NULL,
+  `hobby` varchar(145) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `mahasiswa`
+--
+
+LOCK TABLES `mahasiswa` WRITE;
+/*!40000 ALTER TABLE `mahasiswa` DISABLE KEYS */;
+INSERT INTO `mahasiswa` VALUES (1,'4815040030','Muhamad Hudya Ramadhana','Kebayoran','082213308462','Memasak'),(2,'381412','Jimin Jimin','Korea','02321321','Nyanyi');
+/*!40000 ALTER TABLE `mahasiswa` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -41,4 +52,4 @@ CREATE TABLE `mahasiswa` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-03-17 19:46:49
+-- Dump completed on 2019-03-17 22:35:27
